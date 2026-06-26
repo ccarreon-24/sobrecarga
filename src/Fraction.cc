@@ -25,10 +25,14 @@ int Fraction::den() const {
 }
 
 void Fraction::normalize(){
-  // TODO: normalizar la fraccion.
-  // Sugerencia:
-  // 1. Si denominator < 0, mover el signo al numerador.
-  // 2. Usar std::gcd para reducir numerator y denominator.
+
+	if(denominator < 0){
+		numerator = -1 * numerator;
+		denominator = -1 * denominator;
+	}
+	int mcd = std::gcd(numerator, denominator);
+	numerator = numerator / mcd;
+	denominator = denominator / mcd;
 }
 
 Fraction& Fraction::operator+=(const Fraction& other){
@@ -73,6 +77,8 @@ bool operator==(const Fraction& a, const Fraction& b){
   // TODO: implementar igualdad.
   (void)a;
   (void)b;
+	if(a.num() == b.num() && a.den() == b.den())
+		return true;
   return false;
 }
 

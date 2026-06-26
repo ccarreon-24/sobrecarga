@@ -12,7 +12,7 @@ void testConstruction(){
   Fraction d(2, -4);
 
   assert(a == Fraction(1, 2));
-  assert(b == Fraction(5, 1));
+  assert(b == Fraction(5));
   assert(c == Fraction(1, 2));
   assert(d == Fraction(-1, 2));
 }
