@@ -47,11 +47,13 @@ Fraction& Fraction::operator+=(const Fraction& other){
 Fraction& Fraction::operator-=(const Fraction& other){
   // TODO: implementar resta compuesta.
   (void)other;
+	numerator = numerator * other.den() - other.num() * denominator;
+	denominator = denominator * other.den();
+	normalize();
   return *this;
 }
 
 Fraction operator+(Fraction a, const Fraction& b){
-  // TODO: reutilizar operator+=.
   (void)b;
   return a += b;
 }
@@ -59,7 +61,7 @@ Fraction operator+(Fraction a, const Fraction& b){
 Fraction operator-(Fraction a, const Fraction& b){
   // TODO: reutilizar operator-=.
   (void)b;
-  return a;
+  return a -= b;
 }
 
 Fraction operator*(const Fraction& a, const Fraction& b){
