@@ -38,6 +38,9 @@ void Fraction::normalize(){
 Fraction& Fraction::operator+=(const Fraction& other){
   // TODO: implementar suma compuesta.
   (void)other;
+	numerator	= numerator * other.den() + other.num() * denominator;
+	denominator = denominator * other.den();
+	normalize();
   return *this;
 }
 
@@ -50,7 +53,7 @@ Fraction& Fraction::operator-=(const Fraction& other){
 Fraction operator+(Fraction a, const Fraction& b){
   // TODO: reutilizar operator+=.
   (void)b;
-  return a;
+  return a += b;
 }
 
 Fraction operator-(Fraction a, const Fraction& b){
