@@ -118,8 +118,8 @@ bool operator>=(const Fraction& a, const Fraction& b){
 }
 
 std::ostream& operator<<(std::ostream& os, const Fraction& f){
-  // TODO: imprimir con el formato numerador/denominador.
   (void)f;
+	os<<f.num() << "/" << f.den();
   return os;
 }
 
