@@ -99,7 +99,6 @@ bool operator<(const Fraction& a, const Fraction& b){
 }
 
 bool operator<=(const Fraction& a, const Fraction& b){
-  // TODO: implementar usando operator< y operator==.
   (void)a;
   (void)b;
 
@@ -107,17 +106,15 @@ bool operator<=(const Fraction& a, const Fraction& b){
 }
 
 bool operator>(const Fraction& a, const Fraction& b){
-  // TODO: implementar usando operator<.
   (void)a;
   (void)b;
-  return false;
+  return a.num() * b.den() > a.den() * b.num();
 }
 
 bool operator>=(const Fraction& a, const Fraction& b){
-  // TODO: implementar usando operator<.
   (void)a;
   (void)b;
-  return false;
+  return a > b || a == b;
 }
 
 std::ostream& operator<<(std::ostream& os, const Fraction& f){
