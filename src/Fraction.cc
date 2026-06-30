@@ -62,7 +62,6 @@ Fraction operator-(Fraction a, const Fraction& b){
 }
 
 Fraction operator*(const Fraction& a, const Fraction& b){
-  // TODO: implementar multiplicacion.
   (void)a;
   (void)b;
 	Fraction c(a.num() * b.num(), a.den() * b.den());
@@ -73,7 +72,8 @@ Fraction operator/(const Fraction& a, const Fraction& b){
   // TODO: implementar division y rechazar division por fraccion cero.
   (void)a;
   (void)b;
-  return Fraction(0, 1);
+	Fraction c(a.num() * b.den(), b.num() * a.den());
+  return c;
 }
 
 bool operator==(const Fraction& a, const Fraction& b){
