@@ -77,7 +77,6 @@ Fraction operator/(const Fraction& a, const Fraction& b){
 }
 
 bool operator==(const Fraction& a, const Fraction& b){
-  // TODO: implementar igualdad.
   (void)a;
   (void)b;
 	if(a.num() == b.num() && a.den() == b.den())
@@ -86,10 +85,9 @@ bool operator==(const Fraction& a, const Fraction& b){
 }
 
 bool operator!=(const Fraction& a, const Fraction& b){
-  // TODO: implementar usando operator==.
   (void)a;
   (void)b;
-  return false;
+  return !(a == b);
 }
 
 bool operator<(const Fraction& a, const Fraction& b){
