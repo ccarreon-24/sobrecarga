@@ -124,8 +124,12 @@ std::ostream& operator<<(std::ostream& os, const Fraction& f){
 }
 
 std::istream& operator>>(std::istream& is, Fraction& f){
-  // TODO: leer con el formato numerador/denominador.
-  // Si la entrada es invalida, marcar failbit y no modificar f.
   (void)f;
-  return is;
+	int n, d;
+	char slash;
+	is>>n >> slash >> d;
+	if(is && slash == '/' && d != 0)
+		f = Fraction(n, d);
+	else is.setstate(std::ios::failbit);	
+	return is;
 }
