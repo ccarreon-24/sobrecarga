@@ -91,9 +91,10 @@ bool operator!=(const Fraction& a, const Fraction& b){
 }
 
 bool operator<(const Fraction& a, const Fraction& b){
-  // TODO: implementar usando productos cruzados.
   (void)a;
   (void)b;
+	if(a.num() * b.den() < b.num() * a.den())
+		return true;
   return false;
 }
 
@@ -101,7 +102,8 @@ bool operator<=(const Fraction& a, const Fraction& b){
   // TODO: implementar usando operator< y operator==.
   (void)a;
   (void)b;
-  return false;
+
+  return a < b || a == b;
 }
 
 bool operator>(const Fraction& a, const Fraction& b){
